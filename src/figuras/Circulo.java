@@ -1,41 +1,59 @@
 package figuras;
 
-
-
-//2 * pi * radio = Perimetro
-//pi * r^2 = Area
-
-public class Circulo extends Figura{
+public class Circulo extends Figura {
 
 	double radio;
-	
+
+	/**
+	 * Se crea el circulo con un radio específico
+	 * 
+	 * @param radio
+	 */
 	public Circulo(double radio) {
-		
+
 		this.radio = radio;
 	}
-	
+
+	/**
+	 * Se calcula el area del circulo, Pi*r^2
+	 * 
+	 * @return area
+	 */
 	@Override
-	public double calcularArea() {
-		return Math.round(Math.PI*Math.pow(radio, 2)) ;
+	protected double calcularArea() {
+		area = (int) Math.round(Math.PI * Math.pow(radio, 2));
+
+		return area;
 	}
 
+	/**
+	 * Se calcula el perimetro del circulo, 2*Pi*r
+	 * 
+	 * @return perimetro
+	 */
 	@Override
-	public double calcularPerimetro() {
-		
-		return 2*Math.PI*radio;
+	protected double calcularPerimetro() {
+		perimetro = (int) Math.round(2 * Math.PI * radio);
+
+		return perimetro;
 	}
 
-	@Override
-	public String CalculoTotal() {
-	
-		String rt = "El perimetro de la figura es: "+calcularPerimetro()+" u"
-		+"\nEl area de la figura es: "+calcularArea() +"u^2";
-
-		return rt;
+	/**
+	 * Obtenemos el valor del area del circulo previamente calculado.
+	 * 
+	 * @return area
+	 */
+	public int getAreaCirculo() {
+		return area;
 	}
-	
-	
-	
-	
+
+	/**
+	 * Obtenemos el valor del perimetro del circulo previamente calculado.
+	 * 
+	 * @return perimetro
+	 */
+	public int getPerimetroCirculo() {
+		return perimetro;
+	}
+
 }
-

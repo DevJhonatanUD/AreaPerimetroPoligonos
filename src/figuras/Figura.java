@@ -1,14 +1,16 @@
 package figuras;
 
+
 public abstract class Figura {
 
-	public abstract double calcularArea();
+	protected int area;
+	protected int perimetro;
 	
 	
-	public abstract double calcularPerimetro();
+	protected abstract double calcularArea();
 	
 	
-	public abstract String CalculoTotal();
+	protected abstract double calcularPerimetro();
 	
 	
 }
